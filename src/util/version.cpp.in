@@ -1,0 +1,12 @@
+//
+//  version.cpp.in
+//  RRREPEAT
+//
+//  Created by Bartholomew Joyce on 03/04/2019.
+//  Copyright © 2019 Bartholomew Joyce All rights reserved.
+//
+
+#include <string>
+
+std::string RRREPEAT_VERSION = "${RRREPEAT_VERSION}";
+std::string RRREPEAT_GIT_VERSION = "${RRREPEAT_GIT_VERSION}";

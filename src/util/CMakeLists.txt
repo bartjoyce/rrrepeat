@@ -1,0 +1,17 @@
+execute_process(COMMAND
+    git describe --tags
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+    OUTPUT_VARIABLE RRREPEAT_GIT_VERSION
+    ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/version.cpp.in
+    ${CMAKE_CURRENT_BINARY_DIR}/version.cpp
+)
+list(APPEND SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/fingerprint.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fingerprint.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/version.hpp
+    ${CMAKE_CURRENT_BINARY_DIR}/version.cpp
+)
+set(SOURCES ${SOURCES} PARENT_SCOPE)
