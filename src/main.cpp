@@ -24,11 +24,8 @@ int main(int argc, const char** argv) {
         printf("Failed to init audio client.\n");
         return 0;
     }
-//    sound::load_sound("sound_error.ogg");
-//    sound::load_sound("sound_epiano_a.ogg");
-//    sound::load_sound("sound_mallet.ogg");
-//    sound::load_sound("sound_celeste.ogg");
-//    sound::load_sound("sound_clavinet.ogg");
+    sound::load_sound("rhodes.ogg");
+    sound::play_sound("rhodes.ogg");
 
     // Type faces
     ddui::create_font("regular", "SFRegular.ttf");

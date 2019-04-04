@@ -27,6 +27,7 @@ list(APPEND ASSETS
     ${CMAKE_CURRENT_SOURCE_DIR}/assets/SFMediumItalic.ttf
     ${CMAKE_CURRENT_SOURCE_DIR}/assets/SFThin.ttf
     ${CMAKE_CURRENT_SOURCE_DIR}/assets/PTMono.ttf
+    ${CMAKE_CURRENT_SOURCE_DIR}/assets/rhodes.ogg
 )
 
 if(APPLE)

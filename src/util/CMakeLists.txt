@@ -9,8 +9,6 @@ configure_file(
     ${CMAKE_CURRENT_BINARY_DIR}/version.cpp
 )
 list(APPEND SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/fingerprint.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fingerprint.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/version.hpp
     ${CMAKE_CURRENT_BINARY_DIR}/version.cpp
 )
