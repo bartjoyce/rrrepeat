@@ -1,6 +1,0 @@
-list(APPEND SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/stb_vorbis.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/sound.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/sound.cpp
-)
-set(SOURCES ${SOURCES} PARENT_SCOPE)

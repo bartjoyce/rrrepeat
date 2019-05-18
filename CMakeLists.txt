@@ -10,9 +10,6 @@ set(RRREPEAT_VERSION 1.0.0)
 set(BUILD_EXAMPLE_PROGRAMS OFF CACHE BOOL "Build example programs")
 set(BUILD_TESTS OFF CACHE BOOL "Build tests")
 
-# boost options
-set(Boost_USE_STATIC_LIBS ON)
-
 add_subdirectory(src)
 add_subdirectory(lib/ddui)
 add_subdirectory(lib/libsoundio)

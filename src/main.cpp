@@ -9,23 +9,22 @@
 #include <ddui/core>
 #include <ddui/app>
 #include "update.hpp"
-#include "sound/sound.hpp"
+#include "audio_client.hpp"
+#include "load_ogg.hpp"
+#include "globals.hpp"
+#include "write_callback.hpp"
 
 int main(int argc, const char** argv) {
 
     // ddui (graphics and UI system)
-    if (!ddui::app_init(300, 300, "", update)) {
+    if (!ddui::app_init(700, 300, "", update)) {
         printf("Failed to init ddui.\n");
         return 0;
     }
     
-    // Sound
-    if (sound::init_audio_client()) {
-        printf("Failed to init audio client.\n");
-        return 0;
-    }
-    sound::load_sound("rhodes.ogg");
-    sound::play_sound("rhodes.ogg");
+    // Load the rhodes sound
+    buffer = new StereoBuffer;
+    *buffer = load_ogg("rhodes.ogg");
 
     // Type faces
     ddui::create_font("regular", "SFRegular.ttf");
@@ -34,9 +33,15 @@ int main(int argc, const char** argv) {
     ddui::create_font("thin", "SFThin.ttf");
     ddui::create_font("mono", "PTMono.ttf");
 
+    // Audio client
+    if (init_audio_client(write_callback)) {
+        printf("Failed to init audio client.\n");
+        return 0;
+    }
+
     ddui::app_run();
 
-    sound::destroy_audio_client();
+    destroy_audio_client();
     
     return 0;
 }

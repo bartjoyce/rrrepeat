@@ -8,3 +8,9 @@
 
 #include "globals.hpp"
 
+std::mutex global_mutex;
+StereoBuffer* buffer = NULL;
+long samples_played = 0;
+bool playing = true;
+// KeyState key_states[12];
+// long current_time = 0;
